@@ -1,0 +1,237 @@
+class Main{
+    function void drawHour(int i, bool b){
+        var arrray x,y;
+        let x = Array.new(12);
+        let y = Array.new(12);
+
+        let x[ 0 ] =  266 ;
+        let x[ 1 ] =  301 ;
+        let x[ 2 ] =  327 ;
+        let x[ 3 ] =  336 ;
+        let x[ 4 ] =  327 ;
+        let x[ 5 ] =  301 ;
+        let x[ 6 ] =  266 ;
+        let x[ 7 ] =  231 ;
+        let x[ 8 ] =  205 ;
+        let x[ 9 ] =  196 ;
+        let x[ 10 ] =  205 ;
+        let x[ 11 ] =  231 ;
+        let y[ 0 ] =  58 ;
+        let y[ 1 ] =  67 ;
+        let y[ 2 ] =  93 ;
+        let y[ 3 ] =  128 ;
+        let y[ 4 ] =  163 ;
+        let y[ 5 ] =  189 ;
+        let y[ 6 ] =  198 ;
+        let y[ 7 ] =  189 ;
+        let y[ 8 ] =  163 ;
+        let y[ 9 ] =  128 ;
+        let y[ 10 ] =  93 ;
+        let y[ 11 ] =  67 ;
+
+        do Screen.setColor(b);
+        do Screen.drawLine(266,128,x[i],y[i]);
+        do Memory.deAlloc(x);
+        do Memory.deAlloc(y);
+        if(b=false){
+            do Screen.setColor(true);
+        do Screen.drawCircle(266,128,2);
+        }
+
+
+        return;
+    }
+    function void drawMin(int i,bool b){
+        var arrray x,y;
+        let x = Array.new(60);
+        let y = Array.new(60);
+
+        let x[ 0 ] =  266 ;
+        let x[ 1 ] =  275 ;
+        let x[ 2 ] =  285 ;
+        let x[ 3 ] =  294 ;
+        let x[ 4 ] =  303 ;
+        let x[ 5 ] =  311 ;
+        let x[ 6 ] =  319 ;
+        let x[ 7 ] =  326 ;
+        let x[ 8 ] =  333 ;
+        let x[ 9 ] =  339 ;
+        let x[ 10 ] =  344 ;
+        let x[ 11 ] =  348 ;
+        let x[ 12 ] =  352 ;
+        let x[ 13 ] =  354 ;
+        let x[ 14 ] =  356 ;
+        let x[ 15 ] =  356 ;
+        let x[ 16 ] =  356 ;
+        let x[ 17 ] =  354 ;
+        let x[ 18 ] =  352 ;
+        let x[ 19 ] =  348 ;
+        let x[ 20 ] =  344 ;
+        let x[ 21 ] =  339 ;
+        let x[ 22 ] =  333 ;
+        let x[ 23 ] =  326 ;
+        let x[ 24 ] =  319 ;
+        let x[ 25 ] =  311 ;
+        let x[ 26 ] =  303 ;
+        let x[ 27 ] =  294 ;
+        let x[ 28 ] =  285 ;
+        let x[ 29 ] =  275 ;
+        let x[ 30 ] =  266 ;
+        let x[ 31 ] =  257 ;
+        let x[ 32 ] =  247 ;
+        let x[ 33 ] =  238 ;
+        let x[ 34 ] =  229 ;
+        let x[ 35 ] =  221 ;
+        let x[ 36 ] =  213 ;
+        let x[ 37 ] =  206 ;
+        let x[ 38 ] =  199 ;
+        let x[ 39 ] =  193 ;
+        let x[ 40 ] =  188 ;
+        let x[ 41 ] =  184 ;
+        let x[ 42 ] =  180 ;
+        let x[ 43 ] =  178 ;
+        let x[ 44 ] =  176 ;
+        let x[ 45 ] =  176 ;
+        let x[ 46 ] =  176 ;
+        let x[ 47 ] =  178 ;
+        let x[ 48 ] =  180 ;
+        let x[ 49 ] =  184 ;
+        let x[ 50 ] =  188 ;
+        let x[ 51 ] =  193 ;
+        let x[ 52 ] =  199 ;
+        let x[ 53 ] =  206 ;
+        let x[ 54 ] =  213 ;
+        let x[ 55 ] =  221 ;
+        let x[ 56 ] =  229 ;
+        let x[ 57 ] =  238 ;
+        let x[ 58 ] =  247 ;
+        let x[ 59 ] =  257 ;
+        let y[ 0 ] =  38 ;
+        let y[ 1 ] =  38 ;
+        let y[ 2 ] =  40 ;
+        let y[ 3 ] =  42 ;
+        let y[ 4 ] =  46 ;
+        let y[ 5 ] =  50 ;
+        let y[ 6 ] =  55 ;
+        let y[ 7 ] =  61 ;
+        let y[ 8 ] =  68 ;
+        let y[ 9 ] =  75 ;
+        let y[ 10 ] =  83 ;
+        let y[ 11 ] =  91 ;
+        let y[ 12 ] =  100 ;
+        let y[ 13 ] =  109 ;
+        let y[ 14 ] =  119 ;
+        let y[ 15 ] =  128 ;
+        let y[ 16 ] =  137 ;
+        let y[ 17 ] =  147 ;
+        let y[ 18 ] =  156 ;
+        let y[ 19 ] =  165 ;
+        let y[ 20 ] =  173 ;
+        let y[ 21 ] =  181 ;
+        let y[ 22 ] =  188 ;
+        let y[ 23 ] =  195 ;
+        let y[ 24 ] =  201 ;
+        let y[ 25 ] =  206 ;
+        let y[ 26 ] =  210 ;
+        let y[ 27 ] =  214 ;
+        let y[ 28 ] =  216 ;
+        let y[ 29 ] =  218 ;
+        let y[ 30 ] =  218 ;
+        let y[ 31 ] =  218 ;
+        let y[ 32 ] =  216 ;
+        let y[ 33 ] =  214 ;
+        let y[ 34 ] =  210 ;
+        let y[ 35 ] =  206 ;
+        let y[ 36 ] =  201 ;
+        let y[ 37 ] =  195 ;
+        let y[ 38 ] =  188 ;
+        let y[ 39 ] =  181 ;
+        let y[ 40 ] =  173 ;
+        let y[ 41 ] =  165 ;
+        let y[ 42 ] =  156 ;
+        let y[ 43 ] =  147 ;
+        let y[ 44 ] =  137 ;
+        let y[ 45 ] =  128 ;
+        let y[ 46 ] =  119 ;
+        let y[ 47 ] =  109 ;
+        let y[ 48 ] =  100 ;
+        let y[ 49 ] =  91 ;
+        let y[ 50 ] =  83 ;
+        let y[ 51 ] =  75 ;
+        let y[ 52 ] =  68 ;
+        let y[ 53 ] =  61 ;
+        let y[ 54 ] =  55 ;
+        let y[ 55 ] =  50 ;
+        let y[ 56 ] =  46 ;
+        let y[ 57 ] =  42 ;
+        let y[ 58 ] =  40 ;
+        let y[ 59 ] =  38 ;
+
+        do Screen.setColor(b);
+        do Screen.drawLine(266,128,x[i],y[i]);
+        do Memory.deAlloc(x);
+        do Memory.deAlloc(y);
+        if(b=false){
+            do Screen.setColor(true);
+        do Screen.drawCircle(266,128,2);
+        }
+        return;
+    }
+    function void main(){
+        var int i,j;
+
+        let i=0;
+        let j=0;
+        do Screen.drawCircle(266,128,100);
+        do Screen.setColor(false);
+        do Screen.drawCircle(266,128,95);
+        do Screen.setColor(true);
+        do Screen.drawCircle(266,128,2);
+        
+        do Screen.drawCircle(361,128,2);
+        do Screen.drawCircle(171,128,2);
+
+        do Screen.drawCircle(266,33,2);
+        do Screen.drawCircle(266,223,2);
+
+        do Screen.drawCircle(314,46,2);
+        do Screen.drawCircle(348,80,2);
+
+        do Screen.drawCircle(314,210,2);
+        do Screen.drawCircle(348,176,2);
+
+        do Screen.drawCircle(218,210,2);
+        do Screen.drawCircle(184,176,2);
+
+        do Screen.drawCircle(218,46,2);
+        do Screen.drawCircle(184,80,2);
+        while(true){
+            while(i<12){
+                let j=0;
+                if(i=0){
+                    do Main.drawHour(11,false);
+                }
+                else{
+                    do Main.drawHour((i-1),false);
+                }
+                do Main.drawHour(i, true);
+                while(j<60){
+                    if(j=0){
+                    do Main.drawHour(i, true);
+                    do Main.drawMin(59,false);
+                    }
+                    else{
+                        do Main.drawHour(i, true);
+                        do Main.drawMin((j-1),false);
+                    }
+                    do Main.drawMin(j,true);
+                    let j=j+1;
+                    do Sys.wait(100);
+                    }
+                let i=i+1;
+            }
+        let i=0;
+        }
+        return;
+    }
+}

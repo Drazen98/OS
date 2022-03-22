@@ -1,0 +1,131 @@
+class Matrix{
+    field Array matrix;
+    field int n;
+
+    constructor Matrix new(int d){
+        var int i;
+
+        let n=d;
+        let matrix = Array.new(n*n);
+        let i=0;
+
+        while(i<n){
+            let matrix[i]=0;
+            let i=i+1;
+        }
+        return this;
+    }
+    method int getElem(int i,int j){
+        var int pos;
+        let pos = (i*n)+j;
+        return matrix[pos];
+    }
+    method void setElem(int i, int j, int k){
+        var int pos;
+        let pos = (i*n)+j;
+        let matrix[pos]=k;
+        return;
+    } 
+    method void  add(Matrix b){
+        var int i,j;
+        let i=0;
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                do setElem(i,j, getElem(i,j)+b.getElem(i,j));
+                let j=j+1;
+            }
+             let i=i+1;
+        }
+        return;   
+    }
+    method void  multScalar(int x){
+        var int i,j;
+        let i=0;
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                do setElem(i,j, getElem(i,j)*x);
+                let j=j+1;
+            }
+             let i=i+1;
+        }
+        return;
+    }
+    method void  multMat(Matrix b){
+        var Matrix tmp;
+        var int i,j,k,elem;
+        let i=0;
+        let tmp = Matrix.new(n);
+
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                let elem = 0;
+                let k = 0;
+                while(k<n){
+                    let elem = elem + (getElem(i,k) * b.getElem(k,j)); 
+                    let k=k+1;
+                    
+                }
+                do tmp.setElem(i,j, elem);
+                let j=j+1;
+            }
+             let i=i+1;
+        }
+        let i=0;
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                do setElem(i,j, tmp.getElem(i,j));
+                let j=j+1;
+            }
+             let i=i+1;
+        }
+        return;  
+    }
+    method int  norm(){
+        var int norm,i,j,elem;
+        let norm = 0;
+         let i=0;
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                let elem = getElem(i,j);
+                let norm = norm + (elem*elem);
+                let j=j+1;
+            }
+             let i=i+1;
+        }
+        return Math.sqrt(norm);
+    }
+    function Matrix eye(int n){
+        var Matrix eyem;
+        var int i;
+        let eyem = Matrix.new(n);
+    	let i = 0;
+        while(i<n){
+            do eyem.setElem(i,i,1);
+            let i=i+1;
+        }
+        return eyem;
+    }
+    method void print(){
+        var int i,j;
+        let i=0;
+        while(i<n){
+            let j = 0;
+            while(j<n){
+                do Output.printInt(getElem(i,j));
+                do Output.printString(" ");
+                let j=j+1;
+            }
+            do Output.println();
+            let i=i+1;
+        }
+
+
+        return;
+    }
+    
+}

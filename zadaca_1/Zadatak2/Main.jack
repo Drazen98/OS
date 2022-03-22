@@ -1,0 +1,32 @@
+class Main{
+    function void main(){
+        var Matrix test,test2,test3;
+
+        let test = Matrix.new(3);
+        do test.setElem(1,1,5);
+        do test.setElem(1,0,-1);
+        do test.setElem(0,1,5);
+        do test.setElem(2,0,2);
+        
+        let test2 = Matrix.new(3);
+        
+        do test2.setElem(1,1,1);
+        do test2.setElem(1,0,7);
+        do test2.setElem(0,1,-2);
+        do test2.setElem(2,0,30);
+        
+        do test.print();
+        do Output.println();
+        do test2.print();
+        do Output.println();
+        do test.multMat(test2);
+        do test.print();
+        do Output.println();
+        do Output.printInt(test2.norm());
+
+        do Output.println();
+        let test3 = Matrix.eye(2);
+        do test3.print();
+        return;
+    }
+}
