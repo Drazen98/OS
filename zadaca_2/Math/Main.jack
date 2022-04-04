@@ -1,0 +1,49 @@
+class Main
+{
+    function void main()
+    {
+        do Output.printInt(Math.divide(8,2));
+        do Output.println();
+        do Output.printInt(Math.divide(-5,2));
+        do Output.println();
+        do Output.printInt(Math.divide(10,-1));
+        do Output.println();
+        do Output.printInt(Math.divide(-5,-1));
+        do Output.println();
+        do Output.printInt(Math.divide(4,3));
+        do Output.println();
+        do Output.printInt(Math.divide(-6,-5));
+        do Output.println();
+        do Output.println();
+        do Output.printInt(Math.log(1));
+        do Output.println();
+        do Output.printInt(Math.log(2));
+        do Output.println();
+        do Output.printInt(Math.log(3));
+        do Output.println();
+        do Output.printInt(Math.log(4));
+        do Output.println();
+        do Output.printInt(Math.log(10));
+        do Output.println();
+        do Output.printInt(Math.log(130));
+        do Output.println();
+        do Output.printInt(Math.log(260));
+        do Output.println();
+        do Output.println();
+        do Output.printInt(Math.pow(1,0));
+        do Output.println();
+        do Output.printInt(Math.pow(1,5));
+        do Output.println();
+        do Output.printInt(Math.pow(2,4));
+        do Output.println();
+        do Output.printInt(Math.pow(8,2));
+        do Output.println();
+        do Output.printInt(Math.pow(5,3));
+        do Output.println();
+        do Output.printInt(Math.pow(10,3));
+        do Output.println();
+         do Output.printInt(Math.pow(17,3));
+        do Output.println();
+        return;
+    }
+}

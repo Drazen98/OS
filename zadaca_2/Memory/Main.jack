@@ -1,0 +1,26 @@
+class Main
+{
+    function void main()
+    {
+        var Array A, B;
+
+        
+        let A = Array.new(5);
+        let B = Array.new(5);
+        
+        let A[1] = 14;
+        let A[2] = 13;
+        let A[3] = 12;
+        let A[4] = 11;
+        
+        let B[0] = 10;
+        do Output.printInt(A);
+        do Output.println();
+        do Output.printInt(B);
+        
+        do Memory.memcpy(A,2050,5);
+
+        
+        return;
+    }
+}

@@ -1,0 +1,154 @@
+class Math
+{
+    static Array twoToThe;
+    
+    function void init()
+    {
+        var int i, pow;
+        let twoToThe = Array.new(16);
+        
+        let pow = 1;
+        while (i < 16)
+        {
+            let twoToThe[i] = pow;
+            let pow = pow + pow;
+            let i = i + 1;
+        } 
+        return;
+    }
+    
+    function int multiply(int x, int y)
+    {
+        var int sum, shifted, i;
+        let shifted = x;
+        
+        while (i < 16)
+        {
+            if (twoToThe[i] & y)
+            {
+                let sum = sum + shifted;
+            }
+            let shifted = shifted + shifted;
+            let i = i + 1;
+        }
+        
+        return sum;
+    }
+    
+    function int divide(int x, int y)
+    {
+        var bool sign;
+        var int i;
+        let sign = true;
+        let i = 1;
+        if(((x<0 & y>0) | (x>0 & y<0)) | (x=0 & y<0)){
+            let sign = false;
+        }
+        let x = Math.abs(x);
+        let y = Math.abs(y);
+        
+        while(Math.multiply(i,y)<x){
+            let i=i+1;
+        }
+        if(Math.multiply(i,y)>x){
+            let i=i-1;
+        }
+
+        if(sign){
+            return i;
+        }
+        return Math.multiply(-1,i);
+    }
+    function int log(int x)
+    {  
+        var int i,res;
+        
+        let i=2;
+        let res=1;
+        if(x=1){
+            return 0;
+        }
+         while(i<x){
+            let i= Math.multiply(i,2);
+            let res=res+1;
+         }
+        if(i>x){
+            let res=res-1;
+        }
+        return res;
+    }
+
+     function int pow(int x, int n)
+    {
+    if(n=0){
+        return 1;
+    }
+    if(Math.even(n)){
+        return Math.pow(Math.multiply(x,x), Math.divide(n,2));
+    }
+    else{
+        return Math.multiply(x, Math.pow(Math.multiply(x,x), Math.divide((n-1),2))); 
+    }
+    }
+    function bool even(int x){
+        var bool even;
+        var int res;
+        let even = false;
+
+        let res = x - Math.divide(x,10);
+        if((((res=0) | (res=2))  | ((res=4) | (res=6))) | (res=8)){
+            let even = true;
+        }
+        return even;
+    }
+
+    function int sqrt(int x)
+    {
+        var int i, y, pow;
+        
+        if (x < 0)
+        {
+            return 0;
+        }
+        
+        let i = 7;
+        while (i > -1)
+        {
+            let pow = Math.multiply(y + twoToThe[i], y + twoToThe[i]);
+            if (pow < x)
+            {
+                let y = y + twoToThe[i];
+            }
+            let i = i - 1;
+        }
+        
+        return y;
+    }
+    
+    function int abs(int x)
+    {
+        if (x < 0)
+        {
+            return -x;
+        }
+        return x;
+    }
+    
+    function int min(int x, int y)
+    {
+        if (x < y)
+        {
+            return x;
+        }
+        return y;
+    }
+    
+    function int max(int x, int y)
+    {
+        if (x > y)
+        {
+            return x;
+        }
+        return y;
+    }
+}
