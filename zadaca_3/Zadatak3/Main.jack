@@ -1,0 +1,304 @@
+class Main
+{
+    static int cursorX, cursorY;
+    static int rotation;
+    static char checkEsc;
+
+    function void init(){
+        let cursorX = 29;
+        let cursorY = 14;
+        let rotation = 0;
+        let checkEsc = 0;
+        return;
+    }
+    function void changePos(int x, int y){
+        let cursorX = x;
+        let cursorY = y;
+        return;
+    }
+    function void move(int m){
+        var int newx,newy;
+        if(m=130){
+            if(rotation=0){
+                if(cursorX=0){
+                    return;
+                }
+            }
+            if(rotation=1){
+                if(cursorX=3){
+                    return;
+                }
+            }
+            if(rotation=2){
+                if(cursorX=1){
+                    return;
+                }
+            }
+            if(rotation=3){
+                if(cursorX=0){
+                    return;
+                }
+            }
+            let newx = cursorX-1;
+            let newy = cursorY;
+            do Screen.setColor(false);
+            do Main.draw();
+            do Main.changePos(newx,newy);
+        }
+        if(m=132){
+            if(rotation=0){
+                if(cursorX=61){
+                    return;
+                }
+            }
+            if(rotation=1){
+                if(cursorX=62){
+                    return;
+                }
+            }
+            if(rotation=2){
+                if(cursorX=62){
+                    return;
+                }
+            }
+            if(rotation=3){
+                if(cursorX=59){
+                    return;
+                }
+            }
+            let newx = cursorX+1;
+            let newy = cursorY;
+            do Screen.setColor(false);
+            do Main.draw();
+            do Main.changePos(newx,newy);
+        }
+        if(m=131){
+            if(rotation=0){
+                if(cursorY=0){
+                    return;
+                }
+            }
+            if(rotation=1){
+                if(cursorY=0){
+                    return;
+                }
+            }
+            if(rotation=2){
+                if(cursorY=3){
+                    return;
+                }
+            }
+            if(rotation=3){
+                if(cursorY=1){
+                    return;
+                }
+            }
+            let newx = cursorX;
+            let newy = cursorY-1;
+            do Screen.setColor(false);
+            do Main.draw();
+            do Main.changePos(newx,newy);
+        }
+
+        if(m=133){
+            if(rotation=0){
+                if(cursorY=27){
+                    return;
+                }
+            }
+            if(rotation=1){
+                if(cursorY=29){
+                    return;
+                }
+            }
+            if(rotation=2){
+                if(cursorY=30){
+                    return;
+                }
+            }
+            if(rotation=3){
+                if(cursorY=30){
+                    return;
+                }
+            }
+            let newx = cursorX;
+            let newy = cursorY+1;
+            do Screen.setColor(false);
+            do Main.draw();
+            do Main.changePos(newx,newy);
+        }
+       
+        do Screen.setColor(true);
+        do Main.draw();
+        return;
+    }
+    function void roatate(){
+        var int tmprot;
+        do Screen.setColor(false);
+        do Main.draw();
+
+        if(rotation=0){
+            if(cursorX=62){
+                do Main.changePos((cursorX-2),cursorY);        
+            }
+            if(cursorX=61){
+                do Main.changePos((cursorX-1),cursorY);        
+            }
+            if(cursorX=0){
+                do Main.changePos((cursorX+3),cursorY);        
+            }
+             if(cursorX=1){
+                do Main.changePos((cursorX+2),cursorY);        
+            }
+             if(cursorX=2){
+                do Main.changePos((cursorX+1),cursorY);        
+            }
+            let tmprot = 1;
+        }
+        if(rotation=1){
+            let tmprot = 2;
+            if(cursorY=0){
+                do Main.changePos(cursorX,(cursorY+3));
+            }
+             if(cursorY=1){
+                do Main.changePos(cursorX,(cursorY+2));
+            }
+             if(cursorY=2){
+                do Main.changePos(cursorX,(cursorY+1));
+            }
+            if(cursorY=30){
+                do Main.changePos(cursorX,(cursorY-3));
+            }
+             if(cursorY=29){
+                do Main.changePos(cursorX,(cursorY-2));
+            }
+             if(cursorY=28){
+                do Main.changePos(cursorX,(cursorY-1));
+            }
+        }
+        if(rotation=2){
+            let tmprot = 3;
+            if(cursorX=62){
+                do Main.changePos((cursorX-3),cursorY);        
+            }
+            if(cursorX=61){
+                do Main.changePos((cursorX-2),cursorY);        
+            }
+             if(cursorX=60){
+                do Main.changePos((cursorX-1),cursorY);        
+            }
+        }
+        if(rotation=3){
+            let tmprot = 0;
+            if(cursorY=30){
+                do Main.changePos(cursorX,(cursorY-3));
+            }
+             if(cursorY=29){
+                do Main.changePos(cursorX,(cursorY-2));
+            }
+             if(cursorY=28){
+                do Main.changePos(cursorX,(cursorY-1));
+            }
+        }
+        let rotation = tmprot;
+        do Screen.setColor(true);
+        do Main.draw();
+        return;
+    }
+    function void draw(){
+        var int x1,x2,y1,y2;
+        if(rotation=0){
+            let x1 = 8*cursorX;
+            let x2 = x1+8;
+            let y1 = 8*cursorY;
+            let y2 = 8*(cursorY+3);
+            do Screen.drawRectangle(x1,y1,x2,y2);
+            let y1 = y2;
+            let x2 = x1+16;
+            let y2 = y2+8;
+            do Screen.drawRectangle(x1,y1,x2,y2);
+        }
+        if(rotation=1){
+            let x1 = 8*(cursorX-2);
+            let x2 = (8*cursorX)+8;
+            let y1 = 8*cursorY;
+            let y2 = y1+8;
+
+            do Screen.drawRectangle(x1,y1,x2,y2);
+            let x1 = 8*(cursorX-3);
+            let x2 = x1+8;
+            let y2 = y2+8;
+            do Screen.drawRectangle(x1,y1,x2,y2);
+        }
+        
+        if(rotation=2){
+            let x1 = 8*(cursorX-1);
+            let x2 = (8*cursorX)+8;
+            let y1 = 8*(cursorY-3);
+            let y2 = y1+8;
+         
+            do Screen.drawRectangle(x1,y1,x2,y2);
+            let x1 = 8*cursorX;
+            let x2 = x1+8;
+            let y2 = y2+24;
+            do Screen.drawRectangle(x1,y1,x2,y2);
+        }
+         if(rotation=3){
+            let x1 = 8*cursorX;
+            let x2 = (8*cursorX)+24;
+            let y1 = 8*cursorY;
+            let y2 = y1+8;
+         
+            do Screen.drawRectangle(x1,y1,x2,y2);
+            let x1 = 8*(cursorX+3);
+            let x2 = x1+8;
+            let y1 = 8*(cursorY-1);
+            let y2 = y1+16;
+            do Screen.drawRectangle(x1,y1,x2,y2);
+        }
+        return;
+    }
+
+    function void main()
+    {
+        do Main.init();
+        while(~(checkEsc = 140)){
+        do Main.draw();
+        let checkEsc = Keyboard.keyPressed(); 
+        
+        if(checkEsc=82){
+            do Main.roatate();
+            while(~(Keyboard.keyPressed()=0)){
+
+            }
+        }
+        if(checkEsc=130){
+            do Main.move(130);
+            while(~(Keyboard.keyPressed()=0)){
+
+            }
+        }
+        if(checkEsc=132){
+                do Main.move(132);
+                while(~(Keyboard.keyPressed()=0)){
+
+                }
+            }
+         if(checkEsc=131){
+                do Main.move(131);
+                while(~(Keyboard.keyPressed()=0)){
+
+                }
+            }
+        if(checkEsc=133){
+                do Main.move(133);
+                while(~(Keyboard.keyPressed()=0)){
+
+                }
+            }
+
+        }
+
+        return;
+    }
+}
